@@ -276,6 +276,10 @@ trait ActionContent
         if (is_numeric($value)) {
             return $value;
         }
+
+        if (is_bool($value)) {
+            return $value;
+        }
         
         try {
             return Carbon::parse($value)
